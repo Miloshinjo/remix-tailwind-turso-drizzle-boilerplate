@@ -1,0 +1,54 @@
+{
+  "name": "remix-tailwind-turso-drizzle-template",
+  "private": true,
+  "author": "Milos Dzeletovic",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "dev": "remix vite:dev",
+    "build": "remix vite:build",
+    "lint": "biome lint ./app",
+    "apply:safe": "biome check --apply ./app",
+    "format": "biome format ./app",
+    "start": "remix-serve ./build/server/index.js",
+    "typecheck": "tsc",
+    "generate": "drizzle-kit generate:sqlite --out ./app/.server/db/migrations --breakpoints --schema=./app/.server/db/schema.ts",
+    "push": "drizzle-kit push:sqlite",
+    "studio": "drizzle-kit studio --port 3333"
+  },
+  "dependencies": {
+    "@conform-to/react": "^0.9.1",
+    "@conform-to/zod": "^0.9.1",
+    "@libsql/client": "0.4.0-pre.7",
+    "@remix-run/node": "^2.8.1",
+    "@remix-run/react": "^2.8.1",
+    "@remix-run/serve": "^2.8.1",
+    "clsx": "^2.1.0",
+    "drizzle-orm": "^0.29.5",
+    "drizzle-zod": "^0.5.1",
+    "isbot": "^3.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-email": "2.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.0",
+    "@flydotio/dockerfile": "^0.5.5",
+    "@remix-run/dev": "^2.8.1",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "autoprefixer": "^10.4.19",
+    "drizzle-kit": "^0.20.14",
+    "postcss": "^8.4.38",
+    "remix-development-tools": "^4.1.4",
+    "tailwindcss": "^3.4.3",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.9",
+    "vite-tsconfig-paths": "^4.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
